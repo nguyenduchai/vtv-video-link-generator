@@ -4,6 +4,7 @@ var cheerio = require('cheerio');
 var request = require('request');
 var s = require('string')
 
+var port = Number(process.env.PORT || 5000);
 var app = express();
 
 function get_link(url) {
@@ -39,7 +40,7 @@ app.post('/', function (req, res) {
 
 });
 
-var server = app.listen(5000, function () {
+var server = app.listen(port, function () {
     console.log('Node server is running..');
 });
    
